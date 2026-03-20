@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            box-shadow: 3px 3px 3px black;
+        }
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jugadores del Real Madrid</h1>
+    <div id="contenedor">
+
+    </div>
+    <script>
+        let jugadores = [
+            {
+                nombre:"Mbappe",
+                edad: 28,
+                ficha: 200000000,
+                foto: "mbappe.jpg"
+            },
+            {
+                nombre:"Raúl",
+                edad: 48,
+                ficha: 25000000,
+                foto: "raul.jpg"
+            },
+            {
+                nombre:"Butragueño",
+                edad: 40,
+                ficha:5000000,
+                foto: "butra.jpg"
+            },
+            {
+                nombre:"Zidane",
+                edad: 42,
+                ficha: 3000000,
+                foto: "zidane.jpg"
+            }
+        ]
+        for ( let i=0;i<jugadores.length;i++){
+            //jugador = jugadores[i];
+            fotoJugador = jugadores[i].foto;
+            nombreJugador = jugadores[i].nombre;
+            edadJugador = jugadores[i].edad;
+            fichaJugador = jugadores[i].ficha;
+            nuevaCaja = document.createElement("div");
+            nuevoH1=document.createElement("h1");
+            nuevoH1.innerHTML = nombreJugador;
+            nuevaCaja.appendChild(nuevoH1);
+
+            //Creo un h2 para contener la edad
+            nuevoH2=document.createElement("h2");
+            nuevoH2.innerHTML = "Edad "+ edadJugador;
+            nuevaCaja.appendChild(nuevoH2);
+
+            //Creo un h3 para contener la ficha
+            nuevoH3=document.createElement("h3");
+            nuevoH3.innerHTML = "Ficha "+ fichaJugador;
+            nuevaCaja.appendChild(nuevoH3);
+
+            //Creo una nueva imagen para poner la foto
+            nuevaFoto = document.createElement("img");
+            nuevaFoto.src = fotoJugador;
+            nuevaCaja.appendChild(nuevaFoto);
+
+            //Finalmente agregamos la caja al contenedor
+            document.getElementById("contenedor").appendChild(nuevaCaja);
+        }
+    </script>
+</body>
+</html>
